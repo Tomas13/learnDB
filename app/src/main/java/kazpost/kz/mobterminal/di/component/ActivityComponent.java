@@ -20,6 +20,8 @@ import dagger.Component;
 import kazpost.kz.mobterminal.di.PerActivity;
 import kazpost.kz.mobterminal.di.module.ActivityModule;
 import kazpost.kz.mobterminal.ui.closecell.CloseCellActivity;
+import kazpost.kz.mobterminal.ui.dbcrud.CrudActivity;
+import kazpost.kz.mobterminal.ui.dbcrud.CrudFragment;
 import kazpost.kz.mobterminal.ui.main.MainActivity;
 import kazpost.kz.mobterminal.ui.login.LoginActivity;
 import kazpost.kz.mobterminal.ui.scanner.ScanActivity;
@@ -40,4 +42,5 @@ public interface ActivityComponent {
 
     void inject(ScanActivity activity);
 
+    void inject(CrudFragment fragment);
 }

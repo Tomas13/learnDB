@@ -25,6 +25,9 @@ import kazpost.kz.mobterminal.di.PerActivity;
 import kazpost.kz.mobterminal.ui.closecell.CloseCellMvpPresenter;
 import kazpost.kz.mobterminal.ui.closecell.CloseCellMvpView;
 import kazpost.kz.mobterminal.ui.closecell.CloseCellPresenter;
+import kazpost.kz.mobterminal.ui.dbcrud.CrudMvpPresenter;
+import kazpost.kz.mobterminal.ui.dbcrud.CrudMvpView;
+import kazpost.kz.mobterminal.ui.dbcrud.CrudPresenter;
 import kazpost.kz.mobterminal.ui.login.LoginMvpPresenter;
 import kazpost.kz.mobterminal.ui.login.LoginMvpView;
 import kazpost.kz.mobterminal.ui.login.LoginPresenter;
@@ -84,6 +87,12 @@ public class ActivityModule {
     @Provides
     @PerActivity
     ScanMvpPresenter<ScanMvpView> provideScanPresenter(ScanPresenter<ScanMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    CrudMvpPresenter<CrudMvpView> providesCrudPresenter(CrudPresenter<CrudMvpView> presenter){
         return presenter;
     }
 }

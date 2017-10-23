@@ -6,7 +6,7 @@ package kazpost.kz.mobterminal.utils;
 
 public class AppConstants {
 
-    public static final String DATABASE_NAME = "pronto_shop.db";
+    public static final String DATABASE_NAME = "simple_note_app.db";
 
     public static final int DATABASE_VERSION = 1;
 

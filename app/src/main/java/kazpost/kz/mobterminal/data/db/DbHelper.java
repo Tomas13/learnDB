@@ -25,11 +25,16 @@ public class DbHelper extends SQLiteOpenHelper implements DBHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE customer(_id INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                "name TEXT NOT NULL, email TEXT,  image_path TEXT, phone TEXT, \n" +
-                "street1 TEXT, street2 TEXT, city TEXT, state TEXT, zip TEXT, note TEXT, \n" +
-                "create_date BIGINT, last_update_date BIGINT )");
+        sqLiteDatabase.execSQL(CREATE_TABLE_NOTE);
     }
+
+    private static final String CREATE_TABLE_NOTE = "create table note"
+            + "("
+            + "_id" + " integer primary key autoincrement, "
+            + "title" + " text not null, "
+            + "content" + " text not null, "
+            + "modified_time" + " integer not null, "
+            + "created_time" + " integer not null " + ")";
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

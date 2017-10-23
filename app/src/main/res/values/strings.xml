@@ -26,4 +26,7 @@
     <string name="no_user_barcode">нет баркода оператора</string>
     <string name="pin">Пин-код</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
