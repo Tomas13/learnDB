@@ -13,6 +13,7 @@ import kazpost.kz.mobterminal.ui.newlogin.NewLoginPresenterImpl;
 import kazpost.kz.mobterminal.ui.newlogin.NewLoginView;
 import rx.Observable;
 
+import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -56,6 +57,20 @@ public class NewLoginPresenterTest {
         verify(mNewLoginView).hideLoading();
         verify(mNewLoginView, times(0)).onErrorToast(anyString());
         verify(mNewLoginView).showLoginStatus(expected);
+    }
+
+
+    @Test
+    public void testDoLoginError() throws Exception {
+        when(mDataManager.doLogin("Rafa", "password")).thenReturn(Observable.error(new Throwable("my error")));
+        mNewLoginPresenter.doLogin("Rafa", "password");
+
+        verify(mDataManager).doLogin("Rafa", "password");
+        verify(mNewLoginView).showLoading();
+        verify(mNewLoginView, times(0)).showLoginStatus(any());
+        verify(mNewLoginView).hideLoading();
+        verify(mNewLoginView).onErrorToast("my error");
+
     }
 
 }

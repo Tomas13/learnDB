@@ -28,18 +28,16 @@ public class NewLoginPresenterImpl<V extends NewLoginView> extends BasePresenter
 
         getMvpView().hideLoading();
 
-        observable.subscribe(login -> getMvpView().showLoginStatus(login));
+//        observable.subscribe(login -> getMvpView().showLoginStatus(login));
 
-/*
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(login -> {
-                    EspressoIdlingResource.increment();
+//                    EspressoIdlingResource.increment();
                     getMvpView().showLoginStatus(login);
                 }, throwable -> {
-                    EspressoIdlingResource.decrement();
+//                    EspressoIdlingResource.decrement();
                     getMvpView().onErrorToast(throwable.getMessage());
                 });
-*/
     }
 }
