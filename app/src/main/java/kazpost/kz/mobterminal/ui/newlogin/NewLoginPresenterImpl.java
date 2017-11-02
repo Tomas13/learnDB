@@ -34,7 +34,7 @@ public class NewLoginPresenterImpl<V extends NewLoginView> extends BasePresenter
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(login -> {
 //                    EspressoIdlingResource.increment();
-                    getMvpView().showLoginStatus(login);
+                    if (login != null) getMvpView().showLoginStatus(login);
                 }, throwable -> {
 //                    EspressoIdlingResource.decrement();
                     getMvpView().onErrorToast(throwable.getMessage());

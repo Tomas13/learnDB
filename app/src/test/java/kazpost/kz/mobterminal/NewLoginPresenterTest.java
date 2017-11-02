@@ -73,4 +73,16 @@ public class NewLoginPresenterTest {
 
     }
 
+    @Test
+    public void testDoLoginReturnNull() throws Exception {
+        when(mDataManager.doLogin("Rafa", "password")).thenReturn(Observable.just(null));
+        mNewLoginPresenter.doLogin("Rafa", "password");
+
+        verify(mDataManager).doLogin("Rafa", "password");
+        verify(mNewLoginView).showLoading();
+        verify(mNewLoginView, times(0)).showLoginStatus(any());
+        verify(mNewLoginView).hideLoading();
+        verify(mNewLoginView, times(0)).onErrorToast("my error");
+
+    }
 }
