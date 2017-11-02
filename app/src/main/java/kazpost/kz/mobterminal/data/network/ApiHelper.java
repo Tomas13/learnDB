@@ -2,6 +2,7 @@ package kazpost.kz.mobterminal.data.network;
 
 import kazpost.kz.mobterminal.data.network.model.Envelope;
 import kazpost.kz.mobterminal.data.network.model.request.RequestEnvelope;
+import kazpost.kz.mobterminal.data.remote.Login;
 import rx.Observable;
 
 /**
@@ -12,4 +13,5 @@ public interface ApiHelper {
 
     Observable<Envelope> doAuthorizeOnServer(RequestEnvelope requestEnvelope);
 
+    Observable<Login> doLogin(String username, String password);
 }

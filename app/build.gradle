@@ -46,6 +46,8 @@ dependencies {
     compile 'com.google.dagger:dagger:2.11'
     compile 'com.jakewharton:butterknife:8.8.1'
 
+    compile "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+
 
     compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
@@ -66,11 +68,23 @@ dependencies {
     compile 'io.reactivex:rxjava:1.1.6'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
 
-
-    testCompile 'junit:junit:4.12'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     provided 'javax.annotation:jsr250-api:1.0'
+
+    compile "com.android.support.test.espresso:espresso-idling-resource:$espressoVersion"
+
+    testCompile 'junit:junit:4.12'
+    testCompile "org.robolectric:robolectric:${robolectricVersion}"
+    testCompile "org.powermock:powermock-module-junit4:${powermockVersion}"
+    testCompile "org.powermock:powermock-module-junit4-rule:${powermockVersion}"
+    testCompile "org.powermock:powermock-api-mockito:${powermockVersion}"
+    testCompile "org.powermock:powermock-classloading-xstream:${powermockVersion}"
+
+    testCompile "org.mockito:mockito-core:${mockitoVersion}"
+    testCompile "com.squareup.okhttp3:mockwebserver:${okhttpVersion}"
+
+    androidTestCompile "com.squareup.okhttp3:mockwebserver:${okhttpVersion}"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }

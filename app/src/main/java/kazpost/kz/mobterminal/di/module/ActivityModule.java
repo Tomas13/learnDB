@@ -34,6 +34,9 @@ import kazpost.kz.mobterminal.ui.login.LoginPresenter;
 import kazpost.kz.mobterminal.ui.main.MainMvpPresenter;
 import kazpost.kz.mobterminal.ui.main.MainMvpView;
 import kazpost.kz.mobterminal.ui.main.MainPresenter;
+import kazpost.kz.mobterminal.ui.newlogin.NewLoginPresenter;
+import kazpost.kz.mobterminal.ui.newlogin.NewLoginPresenterImpl;
+import kazpost.kz.mobterminal.ui.newlogin.NewLoginView;
 import kazpost.kz.mobterminal.ui.scanner.ScanMvpPresenter;
 import kazpost.kz.mobterminal.ui.scanner.ScanMvpView;
 import kazpost.kz.mobterminal.ui.scanner.ScanPresenter;
@@ -93,6 +96,12 @@ public class ActivityModule {
     @Provides
     @PerActivity
     CrudMvpPresenter<CrudMvpView> providesCrudPresenter(CrudPresenter<CrudMvpView> presenter){
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    NewLoginPresenter<NewLoginView> providesNewLoginPresenter(NewLoginPresenterImpl<NewLoginView> presenter){
         return presenter;
     }
 }

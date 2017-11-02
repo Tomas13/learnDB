@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 
 import kazpost.kz.mobterminal.data.network.model.Envelope;
 import kazpost.kz.mobterminal.data.network.model.request.RequestEnvelope;
+import kazpost.kz.mobterminal.data.remote.Login;
 import retrofit2.Retrofit;
 import rx.Observable;
 
@@ -21,6 +22,11 @@ public class AppApiHelper implements ApiHelper {
     @Override
     public Observable<Envelope> doAuthorizeOnServer(RequestEnvelope requestEnvelope) {
         return networkService.requestStateInfoObs(requestEnvelope);
+    }
+
+    @Override
+    public Observable<Login> doLogin(String username, String password) {
+        return networkService.getLoginData(username, password);
     }
 
     @Inject

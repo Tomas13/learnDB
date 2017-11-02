@@ -10,7 +10,9 @@ import kazpost.kz.mobterminal.data.network.ApiHelper;
 import kazpost.kz.mobterminal.data.network.model.Envelope;
 import kazpost.kz.mobterminal.data.network.model.request.RequestEnvelope;
 import kazpost.kz.mobterminal.data.prefs.PreferencesHelper;
+import kazpost.kz.mobterminal.data.remote.Login;
 import kazpost.kz.mobterminal.di.ApplicationContext;
+import rx.Observable;
 
 /**
  * Created by root on 4/12/17.
@@ -50,6 +52,11 @@ public class AppDataManager implements DataManager {
     @Override
     public rx.Observable<Envelope> doAuthorizeOnServer(RequestEnvelope requestEnvelope) {
         return mApiHelper.doAuthorizeOnServer(requestEnvelope);
+    }
+
+    @Override
+    public Observable<Login> doLogin(String username, String password) {
+        return mApiHelper.doLogin(username, password);
     }
 
     @Override

@@ -1,11 +1,16 @@
 package kazpost.kz.mobterminal.ui.dbcrud;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -35,9 +40,28 @@ public class CrudFragment extends BaseFragment implements CrudMvpView{
 
         presenter.onAttach(this);
 
-
+        view.findViewById(R.id.floatingActionButton).setOnClickListener(view1 -> fab());
         setRetainInstance(true);
         return view;
+    }
+
+    public void fab(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Message")
+                .setPositiveButton("Fire?", (dialog, id) -> {
+                    // FIRE ZE MISSILES!
+                    Toast.makeText(getBaseActivity().getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
+
+                });
+
+        builder.create().show();
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d("CrudFrag", "onCreate");
     }
 
     @Override

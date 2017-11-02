@@ -30,13 +30,15 @@
         <activity android:name=".ui.closecell.CloseCellActivity" />
         <activity android:name=".ui.print.PrintActivity" />
         <activity android:name=".ui.draw.DrawingActivity">
+
+        </activity>
+        <activity android:name=".ui.dbcrud.CrudActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.dbcrud.CrudActivity"></activity>
     </application>
 
 </manifest>

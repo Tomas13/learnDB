@@ -19,7 +19,7 @@ public class CrudActivity extends BaseActivity {
         setContentView(R.layout.activity_crud);
 
         if (null == savedInstanceState) {
-            initFragment(CrudFragment.newInstance());
+            initFragment(new CrudKotlinFragment());
         }
     }
 
